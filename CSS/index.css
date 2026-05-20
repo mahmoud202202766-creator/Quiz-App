@@ -4,12 +4,11 @@
   padding: 0;
 }
 body {
-  background-image: url("./images/971.jpg");
+  background-image: url("../images/971.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

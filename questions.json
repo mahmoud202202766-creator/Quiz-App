@@ -1,0 +1,57 @@
+[
+  {
+    "question": "What does `typeof null` return in JavaScript?",
+    "options": ["null", "undefined", "object", "string"],
+    "answer": "object"
+  },
+  {
+    "question": "Which method removes the last element of an array?",
+    "options": ["shift()", "pop()", "splice()", "slice()"],
+    "answer": "pop()"
+  },
+  {
+    "question": "What is the output of `0.1 + 0.2 === 0.3`?",
+    "options": ["true", "false", "undefined", "NaN"],
+    "answer": "false"
+  },
+  {
+    "question": "What does `===` check?",
+    "options": ["value only", "type only", "value and type", "reference"],
+    "answer": "value and type"
+  },
+  {
+    "question": "Which keyword declares a block-scoped variable?",
+    "options": ["var", "let", "both", "none"],
+    "answer": "let"
+  },
+  {
+    "question": "What does `Array.isArray([])` return?",
+    "options": ["false", "true", "null", "undefined"],
+    "answer": "true"
+  },
+  {
+    "question": "What is a closure?",
+    "options": [
+      "A loop that closes itself",
+      "A function with access to its outer scope",
+      "A way to close the browser",
+      "An error handler"
+    ],
+    "answer": "A function with access to its outer scope"
+  },
+  {
+    "question": "Which of these is NOT a JS data type?",
+    "options": ["symbol", "boolean", "float", "bigint"],
+    "answer": "float"
+  },
+  {
+    "question": "What does `map()` return?",
+    "options": ["the original array", "a new array", "an object", "undefined"],
+    "answer": "a new array"
+  },
+  {
+    "question": "What is `NaN === NaN`?",
+    "options": ["true", "false", "undefined", "error"],
+    "answer": "false"
+  }
+]

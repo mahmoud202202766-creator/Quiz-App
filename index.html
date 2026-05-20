@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
     <title>Quiz App</title>
   </head>
   <body>
     <h1>Test Your Knowledge In JS</h1>
-    <button>Start Quiz</button>
+    <button
+      id="start-quiz-btn"
+      onclick="
+        () => {
+          window.location = './js.html';
+        }
+      "
+    >
+      Start Quiz
+    </button>
     <script src="quiz.js"></script>
   </body>
 </html>
