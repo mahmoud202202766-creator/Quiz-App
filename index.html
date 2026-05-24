@@ -5,19 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/index.css" />
     <title>Quiz App</title>
+    <script>
+      function changePage() {
+        window.location = "/js.html";
+      }
+    </script>
   </head>
   <body>
     <h1>Test Your Knowledge In JS</h1>
-    <button
-      id="start-quiz-btn"
-      onclick="
-        () => {
-          window.location = './js.html';
-        }
-      "
-    >
-      Start Quiz
-    </button>
-    <script src="quiz.js"></script>
+    <button id="start-quiz-btn" onclick="changePage()">Start Quiz</button>
+    <!-- <script src="quiz.js"></script> -->
   </body>
 </html>
