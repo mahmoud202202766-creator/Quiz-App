@@ -3,11 +3,10 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  transition: all 0.3s;
 }
 
 body {
-  background-image: url("../images/5_asfasw112.jpg");
+  background-image: url("/images/5_asfasw112.jpg");
   background-repeat: no-repeat;
   min-height: 100vh;
   background-size: cover;
@@ -102,7 +101,7 @@ h1 {
   color: white;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .score {
   color: green;

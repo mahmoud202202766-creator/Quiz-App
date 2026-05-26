@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/js.css" />
     <title>JS Quiz</title>
+    <link rel="preload" as="image" href="/images/5_asfasw112.jpg" />
+    <script src="quiz.js" defer></script>
   </head>
   <body>
     <h1>JS Quiz</h1>
@@ -17,13 +19,14 @@
       <div class="answer-container"></div>
       <div class="btn-container">
         <button id="back-btn">Back</button>
-        <button id="submit-btn">Submit</button>
         <button id="next-btn">Next</button>
-        <button id="retake-btn">Retake The Quiz</button>
-        <button id="review-btn">Review Your Answers</button>
+        <button id="submit-btn" class="hidden">Submit</button>
+        <button id="retake-btn" class="hidden">Retake The Quiz</button>
+        <button id="review-btn" class="hidden">Review Your Answers</button>
       </div>
-      <p class="score">Your Score Is <span class="score-result"></span></p>
+      <p class="score hidden">
+        Your Score Is <span class="score-result"></span>
+      </p>
     </div>
-    <script src="quiz.js"></script>
   </body>
 </html>
