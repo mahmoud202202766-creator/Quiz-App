@@ -125,6 +125,13 @@ function handleIndexCases(index, length) {
     if (index === length - 1) {
       hideEl(DOM.btns.nextBtn);
       showEl(DOM.btns.submitBtn);
+      
+      // Submit is disabled unless an answer is already selected for the last question
+      if (state.selections[index] !== undefined) {
+        DOM.btns.submitBtn.disabled = false;
+      } else {
+        DOM.btns.submitBtn.disabled = true;
+      }
     } else {
       showEl(DOM.btns.nextBtn);
       hideEl(DOM.btns.submitBtn);
@@ -218,6 +225,11 @@ function render(mode) {
           answer: answer,
           correct: answer === data[state.index].answer,
         };
+        
+        // Enable Submit button if this is the last question
+        if (state.index === data.length - 1) {
+          DOM.btns.submitBtn.disabled = false;
+        }
       });
     }
   });

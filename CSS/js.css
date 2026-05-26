@@ -161,7 +161,7 @@ body {
 /* Button action bar container */
 .quiz-container .btn-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 12px;
 }
