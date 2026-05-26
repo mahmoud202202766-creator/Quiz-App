@@ -6,104 +6,275 @@
 }
 
 body {
-  background-image: url("/images/5_asfasw112.jpg");
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.85)), url("../images/5_asfasw112.jpg");
   background-repeat: no-repeat;
-  min-height: 100vh;
   background-size: cover;
+  background-position: center;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  padding-inline: 20px;
+  padding: 20px;
+  color: #f8fafc;
 }
-h1 {
-  background: linear-gradient(90deg, #fbbf24, #f472b6, #a78bfa);
+
+.quiz-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.main-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fbbf24 0%, #f472b6 50%, #a78bfa 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.quiz-container {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   text-align: center;
+  letter-spacing: -0.5px;
 }
+
+.quiz-container {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  padding: 36px 30px;
+  width: 100%;
+}
+
+/* Header styles */
 .quiz-container .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, #fbbf24, #f472b6, #a78bfa);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
 }
-.quiz-container h2 {
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, #fbbf24, #f472b6, #a78bfa);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+.q-indicator {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
+.q-progress {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+/* Question style */
+.quiz-container h2.q-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  color: #f1f5f9;
+}
+
+/* Answers options container */
 .quiz-container .answer-container {
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
 }
+
+/* Base style for accessible option button */
 .quiz-container .answer {
-  text-align: start;
-  border: 1px solid white;
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  border-radius: 16px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 20px;
+  border-radius: 14px;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 20px;
-  background: linear-gradient(90deg, #fbbf24, #f472b6, #a78bfa);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: 0.3s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+  width: 100%;
+  outline: none;
 }
-.quiz-container .answer:hover {
-  transform: translateX(10px);
+
+.quiz-container .answer:hover:not(:disabled) {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
+
+/* Custom Visible Focus Style */
+.quiz-container .answer:focus-visible {
+  outline: 3px solid #a78bfa;
+  outline-offset: 3px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Answer states */
 .quiz-container .answer.selected {
-  border: 1px solid purple;
-  transition: 0.3s;
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  border-color: #c084fc;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  color: #ffffff;
+  font-weight: 600;
 }
+
 .quiz-container .answer.correct {
-  border: 1px solid green;
-  transition: 0.3s;
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  border-color: #34d399;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+  color: #ffffff;
+  font-weight: 600;
 }
+
 .quiz-container .answer.wrong {
-  border: 1px solid red;
-  transition: 0.3s;
+  background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+  border-color: #f87171;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+  color: #ffffff;
+  font-weight: 600;
 }
+
+.quiz-container .answer:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* Button action bar container */
 .quiz-container .btn-container {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
 }
+
 .quiz-container .btn-container button {
-  border: 0;
-  padding: 10px 20px;
+  border: none;
+  padding: 12px 24px;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #f8fafc;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
+
+.quiz-container .btn-container button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.quiz-container .btn-container button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.quiz-container .btn-container button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Specific styling for priority actions */
+#submit-btn {
+  background: linear-gradient(135deg, #fbbf24 0%, #f472b6 100%) !important;
+  color: #0f172a !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.25);
+}
+
+#submit-btn:hover {
+  background: linear-gradient(135deg, #fcd34d 0%, #ec4899 100%) !important;
+  box-shadow: 0 6px 16px rgba(244, 114, 182, 0.4) !important;
+}
+
+#retake-btn, #review-btn {
+  background: rgba(167, 139, 250, 0.15) !important;
+  border: 1px solid rgba(167, 139, 250, 0.4) !important;
+  color: #c084fc !important;
+}
+
+#retake-btn:hover, #review-btn:hover {
+  background: rgba(167, 139, 250, 0.3) !important;
+  border-color: #c084fc !important;
+}
+
+/* Utility Hidden state */
 .hidden {
   display: none !important;
 }
+
+/* Focus outline for control buttons */
+.quiz-container .btn-container button:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+/* Score display and layout updates */
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 0 10px;
+  animation: fadeIn 0.4s ease-out;
+}
+
 .score {
-  color: green;
-  font-weight: bold;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.score-result {
+  color: #fbbf24;
+  font-size: 2.2rem;
+}
+
+.score-percentage {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  text-align: center;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px dashed rgba(251, 191, 36, 0.3);
+  padding: 8px 20px;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

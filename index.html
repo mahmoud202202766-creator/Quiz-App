@@ -3,17 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Challenge yourself with our interactive JavaScript Quiz App. Test your JS skills, review your answers, and learn key JavaScript concepts with instant, detailed feedback." />
+    <meta name="keywords" content="JavaScript, JS Quiz, coding quiz, web development, learn JavaScript, interactive quiz" />
+    <meta name="author" content="Antigravity" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="JS Quiz App - Test Your JavaScript Knowledge" />
+    <meta property="og:description" content="Test your JS skills, review your answers, and master JavaScript concepts in a stunning, fully responsive quiz interface." />
+    <meta property="og:url" content="https://github.com/your-username/quiz-app" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="JS Quiz App - Test Your JavaScript Knowledge" />
+    <meta property="twitter:description" content="Test your JS skills, review your answers, and master JavaScript concepts in a stunning, fully responsive quiz interface." />
+
+    <title>JS Quiz App - Test Your JavaScript Knowledge</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
     <link rel="stylesheet" href="CSS/index.css" />
-    <title>Quiz App</title>
     <script>
       function changePage() {
-        window.location = "/js.html";
+        window.location.href = "js.html";
       }
     </script>
   </head>
   <body>
-    <h1>Test Your Knowledge In JS</h1>
-    <button id="start-quiz-btn" onclick="changePage()">Start Quiz</button>
-    <!-- <script src="quiz.js"></script> -->
+    <main class="landing-container">
+      <div class="glass-card">
+        <header>
+          <span class="badge" aria-hidden="true">Interactive Challenge</span>
+          <h1>Test Your Knowledge In JS</h1>
+        </header>
+        <p class="subtitle">Evaluate your JavaScript expertise with 10 conceptual and practical questions. Track your score and review your mistakes with detailed insights.</p>
+        <button id="start-quiz-btn" onclick="changePage()" aria-label="Start the JavaScript Quiz Now">Start Quiz</button>
+      </div>
+    </main>
   </body>
 </html>
